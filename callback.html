@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorization - Clip Studio BR</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+<h1>Authorization complete / Autorização concluída</h1>
+<p>You can close this page and return to the app. / Você pode fechar esta página e voltar ao aplicativo.</p>
+<p class="muted">This page only shows the authorization result returned by TikTok. It stores nothing and sends nothing to any server. / Esta página apenas exibe o resultado devolvido pelo TikTok. Não armazena nem envia nada a nenhum servidor.</p>
+<pre id="out" class="muted"></pre>
+<script>
+var p = new URLSearchParams(location.search);
+var t = [];
+if (p.get("code")) t.push("code: " + p.get("code"));
+if (p.get("error")) t.push("error: " + p.get("error") + " " + (p.get("error_description") || ""));
+document.getElementById("out").textContent = t.join("\n");
+</script>
+</body></html>
